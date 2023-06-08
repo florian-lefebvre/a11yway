@@ -1,0 +1,18 @@
+{
+    "name": "a11yway",
+    "version": "0.0.1",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "tsup --watch \"src/**/*.{js,jsx,ts,tsx}\"",
+        "build": "tsup",
+        "format": "prettier --write ."
+    },
+    "keywords": [],
+    "author": "Florian LEFEBVRE",
+    "license": "ISC",
+    "devDependencies": {
+        "prettier": "^2.8.8",
+        "tsup": "^6.7.0"
+    }
+}
