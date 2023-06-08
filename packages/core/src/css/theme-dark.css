@@ -1,0 +1,6 @@
+:root {
+    --a11yway-toggle-bg-color: theme('colors.gray.800');
+    --a11yway-toggle-bg-hover-color: theme('colors.blue.700');
+    --a11yway-toggle-text-color: theme('colors.gray.200');
+    --a11yway-toggle-border-focus-color: theme('colors.blue.500');
+}

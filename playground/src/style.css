@@ -99,3 +99,10 @@ button:focus-visible {
 .web-toggle-class {
   color: red;
 }
+
+:root {
+  --a11yway-toggle-bg-color: #1a1a1a;
+  --a11yway-toggle-bg-hover-color: #646cff;
+  --a11yway-toggle-text-color: #fff;
+  --a11yway-toggle-border-focus-color: #646cff;
+}
