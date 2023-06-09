@@ -5,5 +5,5 @@ import Toggle from './Toggle'
 const WebMenu = r2wc(Menu, { props: { name: 'string' } })
 customElements.define('a11yway-menu', WebMenu)
 
-const WebToggle = r2wc(Toggle)
+const WebToggle = r2wc(Toggle, { shadow: 'open' })
 customElements.define('a11yway-toggle', WebToggle)
