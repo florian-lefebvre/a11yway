@@ -41,10 +41,10 @@ export default function Menu() {
                                     leaveTo="translate-x-full"
                                 >
                                     <Dialog.Panel className="pointer-events-auto w-screen max-w-md [color-scheme:dark]">
-                                        <div className="flex h-full flex-col overflow-y-scroll bg-gray-700 py-6 shadow-xl">
-                                            <div className="px-4 sm:px-6">
+                                        <div className="flex h-full flex-col overflow-y-scroll border-l border-l-gray-600 bg-gray-700 shadow-xl">
+                                            <div className="bg-gray-800 px-4 py-6 sm:px-6">
                                                 <div className="flex items-start justify-between">
-                                                    <div className="">
+                                                    <div>
                                                         <Dialog.Title className="text-2xl font-bold leading-6 text-gray-50">
                                                             Accessibility
                                                             settings
@@ -74,6 +74,10 @@ export default function Menu() {
                                             </div>
                                             <div className="relative mt-6 flex-1 px-4 sm:px-6">
                                                 {/* Your content */}
+                                            </div>
+                                            <div className="bg-gray-800 px-4 py-6 text-gray-400 sm:px-6">
+                                                Made by Florian Lefebvre. MIT.
+                                                GitHub
                                             </div>
                                         </div>
                                     </Dialog.Panel>
