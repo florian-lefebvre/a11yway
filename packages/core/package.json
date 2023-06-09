@@ -35,6 +35,8 @@
         "@r2wc/react-to-web-component": "^2.0.2",
         "@unocss/reset": "^0.53.1",
         "nanostores": "^0.9.1",
+        "postcss": "^8.4.24",
+        "postcss-nested": "^6.0.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "unocss": "^0.53.1"
