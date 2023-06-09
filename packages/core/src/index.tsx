@@ -1,9 +1,18 @@
 import r2wc from '@r2wc/react-to-web-component'
-import Menu from './Menu'
 import Toggle from './Toggle'
+import Menu from './Menu'
+
+const WebToggle = r2wc(Toggle, { shadow: 'open' })
+customElements.define('a11yway-toggle', WebToggle)
 
 const WebMenu = r2wc(Menu, { props: { name: 'string' } })
 customElements.define('a11yway-menu', WebMenu)
 
-const WebToggle = r2wc(Toggle, { shadow: 'open' })
-customElements.define('a11yway-toggle', WebToggle)
+declare global {
+    namespace JSX {
+        interface IntrinsicElements {
+            'a11yway-toggle': {}
+            'a11yway-menu': {}
+        }
+    }
+}
