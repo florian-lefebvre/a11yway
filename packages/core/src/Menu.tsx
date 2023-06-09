@@ -1,13 +1,15 @@
 import React, { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { useAtom } from './hooks'
-import { $slideoverOpenAtom } from './stores'
+import { $configAtom, $slideoverOpenAtom } from './stores'
 import CSSReset from './CSSReset'
 import Style from './Style'
 import { XMarkIcon } from '@heroicons/react/24/solid'
+import Setting from './Setting'
 
 export default function Menu() {
     const [open, setOpen] = useAtom($slideoverOpenAtom)
+    const [config, setConfig] = useAtom($configAtom)
 
     return (
         <Transition.Root show={open} as={Fragment}>
@@ -41,18 +43,12 @@ export default function Menu() {
                                     leaveTo="translate-x-full"
                                 >
                                     <Dialog.Panel className="pointer-events-auto w-screen max-w-md [color-scheme:dark]">
-                                        <div className="flex h-full flex-col overflow-y-scroll border-l border-l-gray-600 bg-gray-700 shadow-xl">
+                                        <div className="flex h-full flex-col border-l border-l-gray-600 bg-gray-700 shadow-xl">
                                             <div className="bg-gray-800 px-4 py-6 sm:px-6">
                                                 <div className="flex items-start justify-between">
-                                                    <div>
-                                                        <Dialog.Title className="text-2xl font-bold leading-6 text-gray-50">
-                                                            Accessibility
-                                                            settings
-                                                        </Dialog.Title>
-                                                        <p className="text-base text-gray-400">
-                                                            Powered by A11yway
-                                                        </p>
-                                                    </div>
+                                                    <Dialog.Title className="text-2xl font-bold leading-6 text-gray-50">
+                                                        Accessibility settings
+                                                    </Dialog.Title>
                                                     <div className="ml-3 flex h-7 items-center">
                                                         <button
                                                             type="button"
@@ -72,12 +68,69 @@ export default function Menu() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="relative mt-6 flex-1 px-4 sm:px-6">
-                                                {/* Your content */}
-                                            </div>
-                                            <div className="bg-gray-800 px-4 py-6 text-gray-400 sm:px-6">
-                                                Made by Florian Lefebvre. MIT.
-                                                GitHub
+                                            <div className="relative flex flex-1 flex-col divide-y divide-gray-600 overflow-y-auto">
+                                                <Setting.Switch
+                                                    title="Dyslexia"
+                                                    description="Improves reading for dyslexics by changing fonts"
+                                                    checked={config.dyslexia}
+                                                    setChecked={(v) =>
+                                                        setConfig({
+                                                            ...config,
+                                                            dyslexia: v,
+                                                        })
+                                                    }
+                                                />
+                                                <Setting.Switch
+                                                    title="Links highlight"
+                                                    description="Improves navigation by highlighting links"
+                                                    checked={
+                                                        config.linksHighlight
+                                                    }
+                                                    setChecked={(v) =>
+                                                        setConfig({
+                                                            ...config,
+                                                            linksHighlight: v,
+                                                        })
+                                                    }
+                                                />
+                                                <Setting.Switch
+                                                    title="Font size"
+                                                    description="Lorem ipsum"
+                                                    checked={
+                                                        config.linksHighlight
+                                                    }
+                                                    setChecked={(v) =>
+                                                        setConfig({
+                                                            ...config,
+                                                            linksHighlight: v,
+                                                        })
+                                                    }
+                                                />
+                                                <Setting.Disclosure
+                                                    header={
+                                                        <Setting.Switch
+                                                            title="Daltonism"
+                                                            description="Lorem ipsum"
+                                                            checked={
+                                                                config.linksHighlight
+                                                            }
+                                                            setChecked={(v) =>
+                                                                setConfig({
+                                                                    ...config,
+                                                                    linksHighlight:
+                                                                        v,
+                                                                })
+                                                            }
+                                                        />
+                                                    }
+                                                    show={config.linksHighlight}
+                                                >
+                                                    MORE CHOICES
+                                                </Setting.Disclosure>
+
+                                                <div className="mt-auto bg-gray-800 px-4 py-6 text-gray-400 sm:px-6">
+                                                    Powered by A11yway. GitHub
+                                                </div>
                                             </div>
                                         </div>
                                     </Dialog.Panel>
