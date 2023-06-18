@@ -80,13 +80,13 @@ $configAtom.subscribe((config) => {
         document.head.insertAdjacentHTML(
             'beforeend',
             renderToString(
+                // TODO: use css variables
                 <style id={LINKS_HIGHLIGHT_STYLE_ID}>
                     {`
-                a {
+                a, button {
                     background: none!important;
                     background-color: yellow!important;
                     color: blue!important;
-                    box-shadow: -5px 5px 2px #FFFF50!important;
                     border: yellow 3px solid!important;
                 }
                 `}

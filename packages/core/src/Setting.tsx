@@ -1,5 +1,4 @@
 import React from 'react'
-import { Prettify } from './types'
 import { Switch, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 import Style from './Style'
@@ -22,10 +21,7 @@ function SettingSwitch({
     const id = useNanoid()
     return (
         <div id={id} className="contents">
-            <Style
-                styles={`@unocss-placeholder`}
-                parentSelector={`#headlessui-portal-root #${id}`}
-            />
+            <Style styles={`@unocss-placeholder`} parentSelector={`#${id}`} />
             <Switch.Group
                 as="div"
                 className="flex items-center space-x-2 px-4 py-6 hover:bg-indigo-500/10 sm:px-6"

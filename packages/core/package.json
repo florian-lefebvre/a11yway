@@ -31,6 +31,7 @@
         "vite": "^4.3.9"
     },
     "dependencies": {
+        "@ariakit/react": "^0.2.9",
         "@headlessui/react": "^1.7.15",
         "@heroicons/react": "^2.0.18",
         "@julr/unocss-preset-forms": "^0.0.5",
