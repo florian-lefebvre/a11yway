@@ -20,6 +20,7 @@
     "license": "ISC",
     "devDependencies": {
         "@types/react": "^18.2.9",
+        "@types/react-dom": "^18.2.5",
         "@unocss/eslint-config": "^0.53.1",
         "@vitejs/plugin-react": "^4.0.0",
         "eslint": "^8.42.0",
